@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cafe Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1> Cafe Finder</h1>
+    <p>Discover the best cafes around you</p>
+  </header>
+
+  <!-- Search Bar -->
+  <section class="search">
+    <input type="text" id="searchBox" placeholder="Search for a cafe...">
+    <button onclick="searchCafe()">Search</button>
+  </section>
+
+  <!-- Cafe Listings -->
+  <section class="cafes">
+    <div class="cafe-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" alt="Cafe Latte">
+      <h2>Latte Lounge</h2>
+      <p>Cozy cafe with the best lattes in town.</p>
+      <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+    </div>
+
+    <div class="cafe-card">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=80" alt="Cafe Aroma">
+      <h2>Cafe Aroma</h2>
+      <p>Perfect for brunch and specialty coffee lovers.</p>
+      <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+    </div>
+
+    <div class="cafe-card">
+      <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=500&q=80" alt="Brew & Chill">
+      <h2>Brew & Chill</h2>
+      <p>A peaceful cafe for studying and working.</p>
+      <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ for the Cafe Finder Project</p>
+  </footer>
+
+  <!-- Small Search Script -->
+  <script>
+    function searchCafe() {
+      const query = document.getElementById("searchBox").value.toLowerCase();
+      const cafes = document.getElementsByClassName("cafe-card");
+      for (let cafe of cafes) {
+        const name = cafe.querySelector("h2").innerText.toLowerCase();
+        if (name.includes(query)) {
+          cafe.style.display = "block";
+        } else {
+          cafe.style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
